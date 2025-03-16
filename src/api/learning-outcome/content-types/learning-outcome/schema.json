@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "learning_outcomes",
+  "info": {
+    "singularName": "learning-outcome",
+    "pluralName": "learning-outcomes",
+    "displayName": "Learning Outcomes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "learning_outcomes"
+    },
+    "course_objective": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course-objective.course-objective",
+      "inversedBy": "learning_outcomes"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

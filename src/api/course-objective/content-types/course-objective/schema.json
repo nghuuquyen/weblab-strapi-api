@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_objectives",
+  "info": {
+    "singularName": "course-objective",
+    "pluralName": "course-objectives",
+    "displayName": "Course Objectives",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "course_objectives"
+    },
+    "code": {
+      "type": "string"
+    },
+    "learning_outcomes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::learning-outcome.learning-outcome",
+      "mappedBy": "course_objective"
+    }
+  }
+}

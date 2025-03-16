@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Courses",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "code": {
+      "type": "string"
+    },
+    "course_objectives": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-objective.course-objective",
+      "mappedBy": "course"
+    },
+    "learning_outcomes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::learning-outcome.learning-outcome",
+      "mappedBy": "course"
+    }
+  }
+}
